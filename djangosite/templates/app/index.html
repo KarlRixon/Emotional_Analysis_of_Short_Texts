@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ch">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <link rel="stylesheet" href="{% static 'TencentBase.css'%}"> -->
+    <link rel="stylesheet" href="{% static 'index.css'%}">
+</head>
+
+<body>
+    <ul class="photos">
+        <li>
+            <img src="{% static '1.jpg'%}" alt="">
+        </li>
+        <li>
+            <img src="{% static '2.jpg'%}" alt="">
+        </li>
+        <li>
+            <img src="{% static '3.jpg'%}" alt="">
+        </li>
+        <li>
+            <img src="{% static '4.jpg'%}" alt="">
+        </li>
+        <li>
+            <img src="{% static '5.jpg'%}" alt="">
+        </li>
+        <li>
+            <img src="{% static '6.jpg'%}" alt="">
+        </li>
+    </ul>
+    <div class="content1">
+        <ul class="navigate">
+            <li class="name">新品修身牛仔裤男休闲牛仔裤男士牛仔裤</li>
+            <li class="keys">
+                <div><a href="/app/index/0/1">全部评论</a></div>
+                <div><a href="/app/index/1/1">大小合适</a></div>
+                <div><a href="/app/index/2/1">颜色好看</a></div>
+                <div><a href="/app/index/3/1">穿着舒服</a></div>
+                <div><a href="/app/index/4/1">物流很快</a></div>
+                <div style="background: grey"><a href="/app/index/5/1">掉色严重</a></div>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div class="content2">
+        <ul class="comments">
+             {% for com in comment %}
+            <li>{{com.1}}</li>
+            <li style="float:right">{{com.2}} &nbsp;&nbsp;&nbsp; {{com.0}}星</li>
+            <li class="clear"></li>
+            <hr>
+             {% endfor %}
+        </ul>
+    </div>
+    <div class="content3">
+        <li class="pages">
+            <a href="/app/index/{{catergory}}/{{pages.0}}">上一页</a>
+            第{{pages.1}}页
+            <a href="/app/index/{{catergory}}/{{pages.2}}">下一页</a>
+            共{{pages.3}}页
+        </li>
+        <li class="clear"></li>
+    </div>
+    <div class="tail">
+        <li>developed by Karl team.</li>
+    </div>
+</body>
+
+</html>
